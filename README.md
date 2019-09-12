@@ -27,3 +27,4 @@ Or make a mini cd/usb just include kernel and initrd for boot Live.
 Restriction Note, since use the official mount iso function:
 1.The iso name seed as XXX.iso, so the torrent must be XXX.iso.torrent
 2.P2P should only support iso file now.
+3.WIRED Network is needed like from pxe.
