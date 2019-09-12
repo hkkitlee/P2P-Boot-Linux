@@ -3,7 +3,7 @@ Ryan P2P Boot Linux by aria2c
 
 Hello everybody
 
-i am just a newbie, this is my first time to use github.Actually i am not know how to use github....Feel Sorry.
+i am just a newbie, this is my first time to use github. Actually i am not know how to use github....Feel Sorry.
 
 Would let you know i modified the initrd.img from "Debian Buster Live Gnome" for support the P2P boot, should keep all parameter/function from official.
 i try my best for the smallest coding and keep it clean.
