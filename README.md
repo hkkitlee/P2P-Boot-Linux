@@ -25,4 +25,4 @@ boot || goto failed
 
 Restriction Note, since use the official mount iso function:
 1.The iso name seed as XXX.iso, so the torrent must be XXX.iso.torrent
-2.Should only iso file support now.
+2.P2P should only iso file support now.
