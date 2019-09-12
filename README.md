@@ -9,7 +9,6 @@ Would let you know i modified the initrd.img from "Debian Buster Live Gnome" for
 i try my best for the smallest coding and keep it clean.
 
 Please see the uploaded 9990-mount-http.sh, i did :
-
 1.add remarked script for check the /proc/cmdline if fetch="*.iso.torrent" and use aria2c for P2P download iso.
 2.put the aria2c to /bin.
 3.finally change the ${url} ${extension} back to "iso" for below mounting.
@@ -25,4 +24,4 @@ boot || goto failed
 
 Restriction Note, since use the official mount iso function:
 1.The iso name seed as XXX.iso, so the torrent must be XXX.iso.torrent
-2.P2P should only iso file support now.
+2.P2P should only support iso file now.
