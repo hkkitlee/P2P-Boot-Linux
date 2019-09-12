@@ -22,6 +22,7 @@ kernel vmlinuz-4.19.0-6-amd64 initrd=initrd.img-4.19.0-6-amd64 boot=live vga=nor
 initrd initrd.img-4.19.0-6-amd64
 boot || goto failed
 
+Or make a mini cd/usb just include kernel and initrd for boot Live.
 
 Restriction Note, since use the official mount iso function:
 1.The iso name seed as XXX.iso, so the torrent must be XXX.iso.torrent
