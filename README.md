@@ -18,8 +18,8 @@ How to use (ipxe diskless example):
 
 :rpbl
 echo Debian Live booting...
-kernel ${base}pub/debian/live/vmlinuz-4.19.0-6-amd64 initrd=initrd.img-4.19.0-6-amd64 boot=live vga=normal components splash hostname=DebianLive username=user ip=dhcp hooks=filesystem fetch=https://cdimage.debian.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-10.1.0-amd64-gnome.iso.torrent
-initrd ${base}pub/debian/live/initrd.img-4.19.0-6-amd64
+kernel vmlinuz-4.19.0-6-amd64 initrd=initrd.img-4.19.0-6-amd64 boot=live vga=normal components splash hostname=DebianLive username=user ip=dhcp hooks=filesystem fetch=https://cdimage.debian.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-10.1.0-amd64-gnome.iso.torrent
+initrd initrd.img-4.19.0-6-amd64
 boot || goto failed
 
 
