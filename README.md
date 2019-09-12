@@ -8,7 +8,7 @@ i am just a newbie, this is my first time to use github.Actually i am not know h
 Would let you know i modified the initrd.img from "Debian Buster Live Gnome" for support the P2P boot, should keep all parameter/function from official.
 i try my best for the smallest coding and keep it clean.
 
-Please see the uploaded 9990-mount-http.sh, i did :;
+Please see the uploaded 9990-mount-http.sh, i did :\n
 1.add remarked script for check the /proc/cmdline if fetch="*.iso.torrent" and use aria2c for P2P download iso.
 2.put the aria2c to /bin.
 3.finally change the ${url} ${extension} back to "iso" for below mounting.
