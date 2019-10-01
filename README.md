@@ -1,5 +1,5 @@
 # Ryan BitTorrent/P2P-Boot-Linux
-Ryan P2P Boot Linux by aria2c
+Ryan BitTorrent/P2P Boot Linux by aria2c
 
 Hello everybody
 
