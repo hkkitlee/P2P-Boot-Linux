@@ -1,6 +1,9 @@
 # RPBL Ryan BitTorrent/P2P Boot Linux
 Ryan BitTorrent/P2P Boot Linux by aria2c
 
+Index:https://hkkitlee.ddns.net:9000/
+Download usb image:https://hkkitlee.ddns.net:9000/ryan.zip
+
 Hello everybody
 
 i am just a newbie, this is my first time to use github. Actually i am not know how to use github....Feel Sorry.
