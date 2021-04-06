@@ -1,0 +1,100 @@
+#!ipxe
+set vmlinuz vmlinuz-4.19.0-16-amd64
+set initrd RPBL.img
+set liveversion debian-live-10.9.0-amd64
+set cinnamont debian-live-10.9.0-amd64-cinnamon.iso.torrent
+set gnomet debian-live-10.9.0-amd64-gnome.iso.torrent
+set kdet debian-live-10.9.0-amd64-kde.iso.torrent
+set lxdet debian-live-10.9.0-amd64-lxde.iso.torrent
+set lxqtt debian-live-10.9.0-amd64-lxqt.iso.torrent
+set matet debian-live-10.9.0-amd64-mate.iso.torrent
+set standardt debian-live-10.9.0-amd64-standard.iso.torrent
+set xfcet debian-live-10.9.0-amd64-xfce.iso.torrent
+set ee https://gitee.com/hkkitlee/Ryanboot-P2PBitTorrent-Boot-Linux/raw/master/
+set hub https://github.com/hkkitlee/Ryanboot-P2PBitTorrent-Boot-Linux/raw/master/
+console --picture https://raw.githubusercontent.com/hkkitlee/Ryanboot-offical-linux-netbooter/main/matrix.png --x 800 --y 600 || console --picture https://gitee.com/hkkitlee/Ryanboot-offical-linux-netbooter/raw/main/matrix.png --x 800 --y 600
+cpair --foreground 3 --background 0 2
+cpair --foreground 5 --background 9 3
+cpair --foreground 6 --background 4 1
+imgtrust --allow
+
+goto p2p
+
+:p2p
+menu                                    Ryanboot-P2PBitTorrent-Boot-Linux
+
+item	--gap	--	IP: \${ip}/${netmask} Mac Address:\${mac}
+item	--gap	--	DHCP:\${dhcp-server} Gateway:\${gateway} DNS:\${dns}
+item	--gap	--	next-server(proxy):\${next-server}/\${proxydhcp/next-server}
+item	--gap	--	Chip:\${chip} Platform:\${platform} Build Arch:\${buildarch} Version:\${version}
+item	--gap	--	https://hkkitlee.ddns.net:9000/ https://github.com/hkkitlee/Ryanboot
+item	--gap	--	Chainload:http://hkkitlee.ddns.net:8999/chain.ipxe
+item	--gap	--	http://bbs.wuyou.net/forum.php?mod=viewthread&tid=415206&extra=page%3D1
+item	--gap
+
+item	--gap	--	Live version: ${liveversion}		kernel: ${vmlinuz}
+item	--key 0		lxqt			(0) Lxqt
+item	--key 1		gnome			(1) Gnome
+item	--key 2		kde			(2) Kde
+item	--key 3		lxde			(3) Lxde
+item	--key 4		mate			(4) Mate
+item	--key 5		standard		(5) Standard
+item	--key 6		xfce			(6) Xfce
+item	--key 7		cinnamon		(7) Cinnamon
+item	--gap
+item			oln			Ryanboot-offical-linux-netbooter
+item			ryanboot		Ryanboot
+
+
+choose --default gnome target && goto ${target}
+
+:RPBL
+set kp boot=live ethdevice-timeout=60 vga=normal components splash username=user ip=dhcp hooks=filesystem fetch=${image}
+echo -n Kernel Parameter, Bootcode: ${}
+read kp
+echo
+
+
+kernel ${hub}${vmlinuz} || kernel ${ee}${vmlinuz}
+initrd ${hub}${initrd} || initrd ${ee}${initrd}
+imgargs ${vmlinuz} initrd=${initrd} ${kp}
+boot || goto failed
+
+:oln
+chain --autofree https://github.com/hkkitlee/Ryanboot-offical-linux-netbooter/raw/main/oln.ipxe || chain --autofree https://gitee.com/hkkitlee/Ryanboot-offical-linux-netbooter/raw/main/oln.ipxe
+
+:ryanboot
+chain --autofree https://github.com/hkkitlee/Ryanboot/raw/main/chain.ipxe || chain --autofree https://gitee.com/hkkitlee/Ryanboot/raw/main/chain.ipxe || chain --autofree http://hkkitlee.ddns.net:8999/chain.ipxe
+
+:gnome
+set image https://cdimage.debian.org/debian-cd/current-live/amd64/bt-hybrid/${gnomet}
+goto RPBL 
+
+:cinnamon
+set image https://cdimage.debian.org/debian-cd/current-live/amd64/bt-hybrid/${cinnamont}
+goto RPBL 
+
+:kde
+set image https://cdimage.debian.org/debian-cd/current-live/amd64/bt-hybrid/${kdet}
+goto RPBL 
+
+:lxde
+set image https://cdimage.debian.org/debian-cd/current-live/amd64/bt-hybrid/${lxdet}
+goto RPBL 
+
+:lxqt
+set image https://cdimage.debian.org/debian-cd/current-live/amd64/bt-hybrid/${lxqtt}
+goto RPBL 
+
+:mate
+set image https://cdimage.debian.org/debian-cd/current-live/amd64/bt-hybrid/${matet}
+goto RPBL 
+
+:standard
+set image https://cdimage.debian.org/debian-cd/current-live/amd64/bt-hybrid/${standardt}
+goto RPBL 
+
+:xfce
+set image https://cdimage.debian.org/debian-cd/current-live/amd64/bt-hybrid/${xfcet}
+goto RPBL 
+
