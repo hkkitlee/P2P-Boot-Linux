@@ -3,6 +3,8 @@
 
 ## This is a PART of Ryanboot:[Github](https://github.com/hkkitlee/Ryanboot) [Gitee](https://gitee.com/hkkitlee/Ryanboot)
 
+* 下載：[主機下載](https://hkkitlee.ddns.net:9000/ryan.zip) [備用下載](http://hkkitlee.ddns.net:8999/ryan.zip) [Github](https://github.com/hkkitlee/Ryanboot/raw/main/ryan.zip) [Gitee](https://gitee.com/hkkitlee/Ryanboot/raw/main/ryan.zip) [SourceForge](https://sourceforge.net/projects/ryanboot/files/ryan.zip/download) [mirror0](http://183.230.23.18:58000/ryanboot/ryan.zip)
+
 A modified initrd.img from "Debian Buster Live" for support the BT/P2P boot, should keep all parameter/function from official.
 i tried my best for the simplest coding and keep it clean.
 Tested on kvm.
