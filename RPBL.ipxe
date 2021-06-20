@@ -1,5 +1,5 @@
 #!ipxe
-set vmlinuz vmlinuz-4.19.0-16-amd64
+set vmlinuz vmlinuz-4.19.0-17-amd64
 set initrd RPBL.img
 set liveversion debian-live-10.10.0-amd64
 set cinnamont debian-live-10.10.0-amd64-cinnamon.iso.torrent
