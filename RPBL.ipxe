@@ -51,14 +51,26 @@ item			ryanboot		Ryanboot
 choose --default gnome target && goto ${target}
 
 :RPBL
+
+echo Sites:
+echo ${mirror0}
+echo ${hub}
+echo ${ee}
+echo
+
+set ds ${mirror0}
+echo -n Debian Live P2P kernel site: ${}
+read ds
+echo
+
+
 set kp boot=live ethdevice-timeout=60 vga=normal components splash username=user ip=dhcp hooks=filesystem fetch=${image}
 echo -n Kernel Parameter, Bootcode: ${}
 read kp
 echo
 
-
-kernel ${mirror0}/RPBL/${vmlinuz} || ${hub}${vmlinuz} || kernel ${ee}${vmlinuz}
-initrd ${mirror0}/RPBL/${initrd} || ${hub}${initrd} || initrd ${ee}${initrd}
+kernel ${ds}/RPBL/${vmlinuz}
+initrd ${ds}/RPBL/${initrd}
 imgargs ${vmlinuz} initrd=${initrd} ${kp}
 boot || goto failed
 
