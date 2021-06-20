@@ -1,5 +1,5 @@
 #!ipxe
-set vmlinuz vmlinuz-4.19.0-17-amd64
+set vmlinuz 
 set initrd RPBL.img
 set liveversion debian-live-10.10.0-amd64
 set cinnamont debian-live-10.10.0-amd64-cinnamon.iso.torrent
@@ -12,6 +12,8 @@ set standardt debian-live-10.10.0-amd64-standard.iso.torrent
 set xfcet debian-live-10.10.0-amd64-xfce.iso.torrent
 set ee https://gitee.com/hkkitlee/Ryanboot-P2PBitTorrent-Boot-Linux/raw/master/
 set hub https://github.com/hkkitlee/Ryanboot-P2PBitTorrent-Boot-Linux/raw/master/
+set mirror0 http://183.230.23.18:58000/ryanboot/
+
 console --picture https://raw.githubusercontent.com/hkkitlee/Ryanboot-offical-linux-netbooter/main/matrix.png --x 800 --y 600 || console --picture https://gitee.com/hkkitlee/Ryanboot-offical-linux-netbooter/raw/main/matrix.png --x 800 --y 600
 cpair --foreground 3 --background 0 2
 cpair --foreground 5 --background 9 3
@@ -55,8 +57,8 @@ read kp
 echo
 
 
-kernel ${hub}${vmlinuz} || kernel ${ee}${vmlinuz}
-initrd ${hub}${initrd} || initrd ${ee}${initrd}
+kernel ${mirror0}/RPBL/${vmlinuz} || ${hub}${vmlinuz} || kernel ${ee}${vmlinuz}
+initrd ${mirror0}/RPBL/${initrd} || ${hub}${initrd} || initrd ${ee}${initrd}
 imgargs ${vmlinuz} initrd=${initrd} ${kp}
 boot || goto failed
 
