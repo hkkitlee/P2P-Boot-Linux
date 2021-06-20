@@ -1,15 +1,15 @@
 #!ipxe
 set vmlinuz vmlinuz-4.19.0-16-amd64
 set initrd RPBL.img
-set liveversion debian-live-10.9.0-amd64
-set cinnamont debian-live-10.9.0-amd64-cinnamon.iso.torrent
-set gnomet debian-live-10.9.0-amd64-gnome.iso.torrent
-set kdet debian-live-10.9.0-amd64-kde.iso.torrent
-set lxdet debian-live-10.9.0-amd64-lxde.iso.torrent
-set lxqtt debian-live-10.9.0-amd64-lxqt.iso.torrent
-set matet debian-live-10.9.0-amd64-mate.iso.torrent
-set standardt debian-live-10.9.0-amd64-standard.iso.torrent
-set xfcet debian-live-10.9.0-amd64-xfce.iso.torrent
+set liveversion debian-live-10.10.0-amd64
+set cinnamont debian-live-10.10.0-amd64-cinnamon.iso.torrent
+set gnomet debian-live-10.10.0-amd64-gnome.iso.torrent
+set kdet debian-live-10.10.0-amd64-kde.iso.torrent
+set lxdet debian-live-10.10.0-amd64-lxde.iso.torrent
+set lxqtt debian-live-10.10.0-amd64-lxqt.iso.torrent
+set matet debian-live-10.10.0-amd64-mate.iso.torrent
+set standardt debian-live-10.10.0-amd64-standard.iso.torrent
+set xfcet debian-live-10.10.0-amd64-xfce.iso.torrent
 set ee https://gitee.com/hkkitlee/Ryanboot-P2PBitTorrent-Boot-Linux/raw/master/
 set hub https://github.com/hkkitlee/Ryanboot-P2PBitTorrent-Boot-Linux/raw/master/
 console --picture https://raw.githubusercontent.com/hkkitlee/Ryanboot-offical-linux-netbooter/main/matrix.png --x 800 --y 600 || console --picture https://gitee.com/hkkitlee/Ryanboot-offical-linux-netbooter/raw/main/matrix.png --x 800 --y 600
